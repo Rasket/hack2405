@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
 {% block content  %}
-<div>Hello</div>
-<div>{{current_user.username}}</div>
+<span class="navtext">Hello</span>
+
+{% if current_user.is_anonymous %}
+{% else %}
+<div class="navtext">{{current_user.username}}</div>
+{% endif %}
 {% endblock %}

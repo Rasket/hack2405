@@ -27,7 +27,7 @@ def login():
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
-	return render_template('index.html', title='Index')
+	return render_template('indeax.html', title='Index')
 # главная страница, скорее всего удалится в будущем
 
 

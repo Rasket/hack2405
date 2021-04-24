@@ -86,7 +86,7 @@ text-align: center;
     </head>
     <body>
         <div >
-            <font color="#228B22"><span style="font-size:60px" text-align=left  >ECO-profile:</span></font>
+            <font color="#228B22"><a style="font-size:60px" text-align=left href="{{ url_for('index') }}" >ECO-profile:</a></font>
             
             {% if current_user.is_anonymous %}
             <a class="navtext" href="{{ url_for('explore') }}">Explore</a>
