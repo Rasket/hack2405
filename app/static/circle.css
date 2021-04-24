@@ -262,7 +262,7 @@
   width: 5em;
   line-height: 5em;
   font-size: 0.2em;
-  color: #cccccc;
+  color: #3d2b2b;
   display: block;
   text-align: center;
   white-space: nowrap;
@@ -286,7 +286,7 @@
   display: block;
   content: " ";
   border-radius: 50%;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   width: 0.84em;
   height: 0.84em;
   -webkit-transition-property: all;
@@ -1015,7 +1015,7 @@
   width: 3.33em;
   line-height: 3.33em;
   font-size: 0.3em;
-  color: #307bbb;
+  color: #b80f0f;
 }
 .c100:hover:after {
   top: 0.04em;
@@ -1024,11 +1024,11 @@
   height: 0.92em;
 }
 .c100.dark {
-  background-color: #777777;
+  background-color: #cccccc;
 }
 .c100.dark .bar,
 .c100.dark .fill {
-  border-color: #c6ff00 !important;
+  border-color: #b80f0f !important;
 }
 .c100.dark > span {
   color: #777777;

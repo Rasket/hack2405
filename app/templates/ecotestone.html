@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1><span class="navtext">Fill eco form</span></h1>
+	<form action="" method="post" enctype="multipart/form-data">
+	{% for subfield in form.example %}
+    <tr>
+	<td>
+		{{ subfield }}
+        {{ subfield.label }}
+    </td>
+    </tr>
+	{% endfor %}
+	<p>{{ form.submit() }}</p>
+	</form>
+	<dir>some text</dir>
+{% endblock %}
+

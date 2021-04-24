@@ -3,7 +3,7 @@ from app import app, db
 from app.models import User
 from flask import render_template, flash, redirect, url_for
 from app.forms import LoginForm
-from app.forms import RegistrationForm
+from app.forms import RegistrationForm, SimpleForm
 from flask_login import current_user, login_user, logout_user, login_required
 
 '''
@@ -46,9 +46,12 @@ def company(companyname):
 # страница компании отедльной
 
 
-@app.route('/explore')
+@app.route('/explore', methods=['GET', 'POST'])
 def explore():
-	return 'hello'
+    form = SimpleForm()
+    if form.validate_on_submit():
+        print(form.example.data)
+    return render_template('ecotestone.html', form = form)
 # здесь планируется размещать информацию о всех компаниях которые хотят рассказать о своей эко оценке + поиск по компаниям
 
 @app.route('/register', methods=['GET', 'POST'])

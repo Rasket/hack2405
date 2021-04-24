@@ -44,7 +44,10 @@ a:active {
                 font-size:30px;
                 font-family: 'Playfair Display SC', serif;
             }
-
+            .maintext{
+                font-size:30px;
+                font-family: 'Playfair Display SC', serif;
+            }
             body{
 text-align: center;
                 background: url("/static/userback.jpg");
@@ -111,22 +114,39 @@ text-align: center;
         {% block content %}{% endblock %}
     
 
-    <div align="center" style="font-size:30px">Hello {{user.username}}</div>
-    <div align="center" style="font-size:30px">You current environmental friendliness:</div>
-    <div class="parent"><div align="center">
-            <div class="clearfix">
-
-                <div class="c100 p80 big green">
-                    <span>50%</span>
-                    <div class="slice">
-                        <div class="bar"></div>
-                        <div class="fill"></div>
+    <div align="center" class="maintext">Hello {{user.username}}</div>
+    {% if current_user.ecological == None %}
+    <div align="center" class="maintext">You have no current environmental friendliness</div>
+    {% else %}
+    {% if current_user.ecological > 50 %}
+    <div align="center" class="maintext">You current environmental friendliness:</div>    
+        <div class="parent"><div align="center">
+                <div class="clearfix">
+                    <div class="c100 p{{current_user.ecological}} big green">
+                        <span>{{current_user.ecological}}</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
                     </div>
                 </div>
-
-
             </div>
-    </div>
-    </div>
+        </div>
+    {% else %}
+        <div align="center" class="maintext">You current environmental friendliness:</div>    
+        <div class="parent"><div align="center">
+                <div class="clearfix">
+                    <div class="c100 p{{current_user.ecological}} big dark">
+                        <span>{{current_user.ecological}}</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endif %}
 </body>
 </html>

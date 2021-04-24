@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User
+from wtforms import RadioField
 
 
 class LoginForm(FlaskForm):
@@ -29,3 +30,9 @@ class RegistrationForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Please use a different email address.')
+
+class SimpleForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    example = RadioField('Label', choices=[('sec','description'),('sec1','whatever')])
+    submit = SubmitField('Confirm')
