@@ -1,8 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, FileField, RadioField
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from app.models import User
-from wtforms import RadioField
 
 
 class LoginForm(FlaskForm):
@@ -36,3 +35,19 @@ class ResponsibilityWaste(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     example = RadioField('Label', choices=[('sec','description'),('sec1','whatever')])
     submit = SubmitField('Confirm')
+
+class EditProfileForm(FlaskForm):
+    username = StringField('Username', validators = [DataRequired()])
+    about_me = TextAreaField('About me', validators = [Length(min = 0, max = 140)])
+    image = FileField('Avatar')
+    submit = SubmitField('Submit')
+
+    def __init__(self, original_name, *args, **kwargs):
+        super(EditProfileForm, self).__init__(*args, **kwargs)
+        self.original_name = original_name
+
+    def validate_username(self, username):
+        if username.data != self.original_name:
+            user = User.query.filter_by(username = username.data).first()
+            if user is not None:
+                raise ValidationError('Please use a different username.')

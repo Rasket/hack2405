@@ -94,7 +94,8 @@ text-align: center;
             {% else %}
             <span class="navtext">{{current_user.username}}</span>
             <a class="navtext" href="{{ url_for('explore') }}">Explore</a>
-            <a class="navtext" href="{{ url_for('company', companyname=current_user.username) }}">Profile</a>   
+            <a class="navtext" href="{{ url_for('company', companyname=current_user.username) }}">Profile</a>
+            <a class="navtext" href="{{ url_for('edit_profile') }}">Edit profile</a>   
             <a class="navtext" href="{{ url_for('logout') }}">Logout</a>
             {% endif %}
         </div>
