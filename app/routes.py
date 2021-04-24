@@ -41,7 +41,8 @@ def logout():
 @app.route('/company/<companyname>/', methods=['GET', 'POST'])
 @login_required
 def company(companyname):
-	return companyname
+    user = User.query.filter_by(username=companyname).first_or_404()
+    return render_template('user.html', user=user)
 # страница компании отедльной
 
 
@@ -60,7 +61,7 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
+        flash('Congratulations, you are now part of a ECO-profile!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 # секретная регистрация для компании
