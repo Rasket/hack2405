@@ -8,9 +8,15 @@
     </head>
     <body>
         <div>
-            Microblog:
-            <a href="{{ url_for('index') }}">Home</a>
-            <a href="{{ url_for('login') }}">Login</a>
+            ECO-profile:
+            <a href="{{ url_for('explore') }}">Explore</a>
+            {% if current_user.is_anonymous %}
+                <a href="{{ url_for('login') }}">Login</a>
+            {% else %}
+            <div>User: "{{current_user.username}}" 123</div>
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="{{ url_for('company', companyname=current_user.username) }}">Profile</a>   
+            {% endif %}
         </div>
         <hr>
         {% with messages = get_flashed_messages() %}
