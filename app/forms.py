@@ -31,7 +31,7 @@ class RegistrationForm(FlaskForm):
         if user is not None:
             raise ValidationError('Please use a different email address.')
 
-class SimpleForm(FlaskForm):
+class ResponsibilityWaste(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])
     example = RadioField('Label', choices=[('sec','description'),('sec1','whatever')])
