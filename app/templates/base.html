@@ -43,7 +43,7 @@ a:active {
             }
 
             body{
-text-align: center;
+            text-align: center;
                 background: url("/static/userback.jpg");
                 background-size: cover; 
                 margin: 12px;
@@ -63,7 +63,12 @@ text-align: center;
 
                 margin: 40px 0 60px 0;
             }
-
+            .prozrach
+            {
+                background: url("/static/bgr_main.jpg");
+                width: 100%;
+                background: rgba(0,168,118, 0.5);
+            }
             .dark-area {
                 background-color: #666;
                 padding: 40px;
@@ -85,7 +90,7 @@ text-align: center;
         {% endif %}
     </head>
     <body>
-        <div >
+        <div class="prozrach">
             <font color="#228B22"><a style="font-size:60px" text-align=left href="{{ url_for('index') }}" >ECO-profile:</a></font>
             
             {% if current_user.is_anonymous %}
