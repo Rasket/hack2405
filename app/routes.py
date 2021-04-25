@@ -2,7 +2,7 @@
 from app import app, db
 from app.models import User
 from flask import render_template, flash, redirect, url_for, request
-from app.forms import LoginForm, RegistrationForm, ResponsibilityWaste, EditProfileForm
+from app.forms import LoginForm, RegistrationForm, ResponsibilityWaste, EditProfileForm, ResponsibilityWaste_alt, TestForm
 from flask_login import current_user, login_user, logout_user, login_required
 from test1 import test1
 
@@ -94,7 +94,10 @@ def edit_profile():
     return render_template('edit.html', title = 'Edit Profile', form = form)    
 
 
+
 def parsa(data):
+    if data == 'Да':
+        return 2    
     if data == 'Да, постоянно':
         return 2
     if data == "Иногда":
@@ -102,31 +105,80 @@ def parsa(data):
     if data == "Нет":
         return 0
     if data == 'до 50%':
-        return 2
-    if data == "50%":
         return 1
+    if data == "50%":
+        return 2
     if data == "от 50% до 100%":
-        return 0
+        return 3
+    return -1
+
+@app.route('/smalltest', methods=['GET', 'POST'])
+@login_required
+def quiz_small():
+    form = TestForm()
+    if form.validate_on_submit():
+        koef = 1
+        ball = 1
+        if parsa(form.eighteenth.data) == -1:
+            pass
+        else:
+            koef += 2
+            ball += parsa(form.eighteenth.data)
+        if parsa(form.twentyth.data) == -1:
+            pass
+        else:
+            koef += 2
+            ball += parsa(form.twentyth.data)
+        if parsa(form.twentyfirst.data) == -1:
+            pass
+        else:
+            koef += 2
+            ball += parsa(form.twentyfirst.data)                    
+        current_user.ecological = int(100*ball/koef)  
+        db.session.commit()      
+        return redirect(url_for('quiz'))
+    return render_template('smalltest.html', form = form, text='test', title = 'Ecoquiz')
+
 
 
 @app.route('/ecoquiz', methods=['GET', 'POST'])
 @login_required
 def quiz():
+    user = User.query.filter_by(username = current_user.username)
     form = ResponsibilityWaste()
     if form.validate_on_submit():
-        form.first.data 
-        current_user.answers_work =            
+        koef = 0
+        ball = 0
+        if parsa(form.eighteenth.data) == -1:
+            pass
+        else:
+            koef += 2
+            ball += parsa(form.eighteenth.data)
+        if parsa(form.twentyth.data) == -1:
+            pass
+        else:
+            koef += 2
+            ball += parsa(form.twentyth.data)
+        if parsa(form.twentyfirst.data) == -1:
+            pass
+        else:
+            koef += 2
+            ball += parsa(form.twentyfirst.data)                    
+        current_user.ecological = int(100*ball/koef)  
+        current_user.ecological = 55 
+        db.session.commit()      
         return redirect(url_for('quiz'))
     return render_template('quiz.html', form = form, text='test', title = 'Ecoquiz')
+
 
 
 @app.route('/ecoquizalt', methods=['GET', 'POST'])
 @login_required
 def quiz_alt():
     userTest = test1()
-    userLog = current_user.answers
-    userTest.start()
-    forForm = "Данные передаваемые в форму"
+    userLog = current_user.answers   
+    userLog = '01'
+    forForm = userTest.start()
     if userLog == None:
         pass
     else:
@@ -135,9 +187,11 @@ def quiz_alt():
     if 0:
         "Переход на страницу с результатом"
     else: #подать в формму нужный вопрос
-        form = ResponsibilityWaste()
+        form = ResponsibilityWaste_alt()
+        form.fff(forForm)
         if form.validate_on_submit():
+            #сохранить ответ пользователя 
             flash(form.first.data)     
-            return redirect(url_for('quiz'))
-        return render_template('quiz.html', form = form, text='test', title = 'Ecoquiz')
-# возможность узнать свою экооценку
+            return redirect(url_for('quiz_alt'))
+        return render_template('onetask.html', form = form, text='test', title = 'Ecoquiz')
+        # возможность узнать свою экооценку

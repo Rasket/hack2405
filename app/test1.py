@@ -44,13 +44,13 @@ class test1():
                 self.result_recykle += 5
                 self.question  = 3
         
-        if self.question == 1:
+        elif self.question == 1:
             if choice == 0:
                 self.question = 2
             else:
                 self.question = 3
         
-        if self.question == 2:
+        elif self.question == 2:
             self.question = 3
             if choice == 0:
                 self.result_recykle += 1
@@ -59,20 +59,20 @@ class test1():
             else:
                 self.result_recykle += 5
 
-        if self.questions == 3:
+        elif self.questions == 3:
             if choice == 0:
                 self.question = 4
             else:
                 self.result_recykle += 5
                 self.question = 6
         
-        if self.question == 4:
+        elif self.question == 4:
             if choice == 0:
                 self.question = 5
             else:
                 self.question = 6
         
-        if self.question == 5:
+        elif self.question == 5:
             self.question = 6
             if choice == 0:
                 self.result_recykle += 1
@@ -82,20 +82,20 @@ class test1():
                 self.result_recykle += 5
         
         
-        if self.question == 6:
+        elif self.question == 6:
             if choice == 0:
                 self.question = 7
             else:
                 self.result_recykle += 5
                 self.question = 9
         
-        if self.question == 7:
+        elif self.question == 7:
             if choice == 0:
                 self.question = 8
             else:
                 self.question = 9
         
-        if self.question == 8:
+        elif self.question == 8:
             self.question = 9
             if choice == 0:
                 self.result_recykle += 1
@@ -104,20 +104,20 @@ class test1():
             else:
                 self.result_recykle += 5
 
-        if self.questions == 9:
+        elif self.questions == 9:
             if choice == 0:
                 self.question = 10
             else:
                 self.result_recykle += 5
                 self.question = 12
         
-        if self.question == 10:
+        elif self.question == 10:
             if choice == 0:
                 self.question = 11
             else:
                 self.question = 12
         
-        if self.question == 11:
+        elif self.question == 11:
             self.question = 12
             if choice == 0:
                 self.result_recykle += 1
@@ -126,20 +126,20 @@ class test1():
             else:
                 self.result_recykle += 5
 
-        if self.questions == 12:
+        elif self.questions == 12:
             if choice == 0:
                 self.question = 13
             else:
                 self.result_recykle += 5
                 self.question = 15
         
-        if self.question == 13:
+        elif self.question == 13:
             if choice == 0:
                 self.question = 14
             else:
                 self.question = 15
         
-        if self.question == 14:
+        elif self.question == 14:
             self.question = 15
             if choice == 0:
                 self.result_recykle += 1
@@ -148,7 +148,7 @@ class test1():
             else:
                 self.result_recykle += 5
 
-        if self.question == 15:
+        elif self.question == 15:
             self.question = 16 
             if choice == 2:
                 self.result_recykle += 3

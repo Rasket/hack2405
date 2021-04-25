@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+ 
+{% block content  %}
+	<h1>ECO quiz</h1>
+	<form action="" method="post" enctype="multipart/form-data">
+	{{form.hidden_tag()}}
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.first.label}}</span><b>
+		
+	{% for subfield in form.first %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 240px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+	<p>{{ form.submit() }}</p>
+	</form>
+{% endblock %}
