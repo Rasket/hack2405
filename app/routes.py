@@ -4,6 +4,7 @@ from app.models import User
 from flask import render_template, flash, redirect, url_for, request
 from app.forms import LoginForm, RegistrationForm, ResponsibilityWaste, EditProfileForm
 from flask_login import current_user, login_user, logout_user, login_required
+from test1 import test1
 
 '''
 Функция логина
@@ -47,7 +48,8 @@ def company(companyname):
 
 @app.route('/explore', methods=['GET', 'POST'])
 def explore():
-    return render_template('explore.html')
+    company = User.query.filter_by(public=1).all()
+    return render_template('explore.html', company = company)
     '''
     form = ResponsibilityWaste()
     if form.validate_on_submit():
@@ -78,7 +80,8 @@ def edit_profile():
     form = EditProfileForm(current_user.username)
     if form.validate_on_submit():
         current_user.username = form.username.data
-        current_user.about_me = form.about_me.data      
+        current_user.about_me = form.about_me.data
+        current_user.public = form.public.data     
         if form.image.data:
             current_user.avatar = image_db.data(form.image.data)        
         db.session.commit()
@@ -87,7 +90,23 @@ def edit_profile():
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
+        form.public.data = current_user.public
     return render_template('edit.html', title = 'Edit Profile', form = form)    
+
+
+def parsa(data):
+    if data == 'Да, постоянно':
+        return 2
+    if data == "Иногда":
+        return 1
+    if data == "Нет":
+        return 0
+    if data == 'до 50%':
+        return 2
+    if data == "50%":
+        return 1
+    if data == "от 50% до 100%":
+        return 0
 
 
 @app.route('/ecoquiz', methods=['GET', 'POST'])
@@ -95,7 +114,30 @@ def edit_profile():
 def quiz():
     form = ResponsibilityWaste()
     if form.validate_on_submit():
-        flash(form.first.data)     
+        form.first.data 
+        current_user.answers_work =            
         return redirect(url_for('quiz'))
     return render_template('quiz.html', form = form, text='test', title = 'Ecoquiz')
+
+
+@app.route('/ecoquizalt', methods=['GET', 'POST'])
+@login_required
+def quiz_alt():
+    userTest = test1()
+    userLog = current_user.answers
+    userTest.start()
+    forForm = "Данные передаваемые в форму"
+    if userLog == None:
+        pass
+    else:
+        for ans in userLog:
+            forForm = userTest.next(ans) 
+    if 0:
+        "Переход на страницу с результатом"
+    else: #подать в формму нужный вопрос
+        form = ResponsibilityWaste()
+        if form.validate_on_submit():
+            flash(form.first.data)     
+            return redirect(url_for('quiz'))
+        return render_template('quiz.html', form = form, text='test', title = 'Ecoquiz')
 # возможность узнать свою экооценку
