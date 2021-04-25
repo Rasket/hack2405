@@ -4,6 +4,7 @@ from app.models import User
 from flask import render_template, flash, redirect, url_for, request
 from app.forms import LoginForm, RegistrationForm, ResponsibilityWaste, EditProfileForm
 from flask_login import current_user, login_user, logout_user, login_required
+from test1 import test1
 
 '''
 Функция логина
@@ -93,9 +94,19 @@ def edit_profile():
 @app.route('/ecoquiz', methods=['GET', 'POST'])
 @login_required
 def quiz():
-    form = ResponsibilityWaste()
-    if form.validate_on_submit():
-        flash(form.first.data)     
-        return redirect(url_for('quiz'))
-    return render_template('quiz.html', form = form, text='test', title = 'Ecoquiz')
+    userTest = Test()
+    userLog = "Строка ответов пользователя"
+    userTest.start()
+    forForm = "Данные передаваемые в форму"
+    for ans in userLog:
+        forForm = userTest.next(ans)
+    
+    if Test.ended():
+        "Переход на страницу с результатом"
+    else: #подать в формму нужный вопрос
+        form = ResponsibilityWaste()
+        if form.validate_on_submit():
+            flash(form.first.data)     
+            return redirect(url_for('quiz'))
+        return render_template('quiz.html', form = form, text='test', title = 'Ecoquiz')
 # возможность узнать свою экооценку
