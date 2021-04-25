@@ -20,6 +20,8 @@ class User(UserMixin, db.Model):
 	about_me = db.Column(db.String(500))
 	ecological = db.Column(db.Integer)
 	public = db.Column(db.Boolean, default=True)
+	answers_work = db.Column(db.String(500), default ='')
+	answers = db.Column(db.String(500), default ='')
 	def set_password(self, password):
 		self.password_hash = generate_password_hash(password)
 	def check_password(self, password):

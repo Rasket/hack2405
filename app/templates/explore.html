@@ -2,5 +2,7 @@
  
 {% block content  %}
 	<h1>ECO companies</h1>
-
+	{% for comp in company %}
+	<div>{{comp.username}}</div>
+	{% endfor %}
 {% endblock %}
