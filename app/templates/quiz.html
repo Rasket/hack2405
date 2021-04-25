@@ -2,21 +2,27 @@
  
 {% block content  %}
 <title>Насколько вы экологичны?</title>
-{% if text %}
-	<div>{{ text }}</div>
-{% else %}
-	<div>Вышла ошибка!</div>
-{% endif %}
+
 <form action="" method="post"  novalidate>
 	{{ form.hidden_tag() }}
+	
+	<table align="center" cellspacing="0">
+		
 	{% for subfield in form.first %}
-    <tr>
-	<td>
-		{{ subfield }}
-        {{ subfield.label }}
-    </td>
-    </tr>
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 250px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
 	{% endfor %}
+	
+	</table>
 	<p>{{ form.submit() }}</p>
+	
+	
 </form>
+
+
 {% endblock %}
+
