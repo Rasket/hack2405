@@ -92,5 +92,9 @@ def edit_profile():
 
 @app.route('/ecoquiz', methods=['GET', 'POST'])
 def quiz():
-	return redirect(url_for('index'))
+    form = ResponsibilityWaste()
+    if form.validate_on_submit():
+        flash(form.first.data)     
+        return redirect(url_for('quiz'))
+    return render_template('quiz.html', form = form, text='test')
 # возможность узнать свою экооценку

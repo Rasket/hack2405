@@ -31,9 +31,11 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('Please use a different email address.')
 
 class ResponsibilityWaste(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    example = RadioField('Label', choices=[('sec','description'),('sec1','whatever')])
+    #username = StringField('Username', validators=[DataRequired()])
+    #email = StringField('Email', validators=[DataRequired(), Email()])
+    #example = RadioField('Label', choices=[('sec','description'),('sec1','whatever')])
+    first = RadioField('Выберите тип организации общественного питания', choices = ('Ресторан', 'Бар', 'Кафе', 'Столовая', 'Закусочная', 'Кафетерий', 'Магазин-кулинариная', 'Другое'))
+    #second = StringField('Наименование организации (включая форму собственности)', validators = [Length(min = 1, max = 25)])
     submit = SubmitField('Confirm')
 
 class EditProfileForm(FlaskForm):

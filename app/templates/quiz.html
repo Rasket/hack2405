@@ -7,4 +7,16 @@
 {% else %}
 	<div>Вышла ошибка!</div>
 {% endif %}
+<form action="" method="post"  novalidate>
+	{{ form.hidden_tag() }}
+	{% for subfield in form.first %}
+    <tr>
+	<td>
+		{{ subfield }}
+        {{ subfield.label }}
+    </td>
+    </tr>
+	{% endfor %}
+	<p>{{ form.submit() }}</p>
+</form>
 {% endblock %}
