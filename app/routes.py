@@ -177,21 +177,25 @@ def quiz():
 def quiz_alt():
     userTest = test1()
     userLog = current_user.answers   
-    userLog = '01'
     forForm = userTest.start()
     if userLog == None:
         pass
     else:
         for ans in userLog:
-            forForm = userTest.next(ans) 
+            forForm = userTest.next(int(ans)) 
     if 0:
         "Переход на страницу с результатом"
     else: #подать в формму нужный вопрос
         form = ResponsibilityWaste_alt()
         form.fff(forForm)
         if form.validate_on_submit():
+            if current_user.answers == None:
+                current_user.answers = str(forForm[1].index(form.first.data))
+            else:
+                current_user.answers += str(forForm[1].index(form.first.data))
+            db.session.commit()
             #сохранить ответ пользователя 
             flash(form.first.data)     
-            return redirect(url_for('quiz_alt'))
-        return render_template('onetask.html', form = form, text='test', title = 'Ecoquiz')
+            return render_template('onetask.html', form = form, title = 'Ecoquiz')
+        return render_template('onetask.html', form = form, title = 'Ecoquiz')
         # возможность узнать свою экооценку
