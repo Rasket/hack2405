@@ -80,6 +80,11 @@ class ResponsibilityWaste(FlaskForm):
     fourtyeighteenth = RadioField(' Можно ли у вас при заказе на дом отказаться от одноразовой посуды, салфеток и соусов при доставке на дом? * ', choices = ('Да', 'Нет'))
     submit = SubmitField('Confirm')
 
+class ResponsibilityWaste_alt(FlaskForm):
+    first =  RadioField(' Можно ли у вас при заказе на дом отказаться от одноразовой посуды, салфеток и соусов при доставке на дом? * ', choices = ('Да', 'Нет'))
+    submit = SubmitField('Confirm')
+    def __init__(self, keys):
+        first = RadioField(keys[0],  choices = tuple(keys[1]))
 class EditProfileForm(FlaskForm):
     username = StringField('Username', validators = [DataRequired()])
     about_me = TextAreaField('About me', validators = [Length(min = 0, max = 140)])

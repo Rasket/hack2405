@@ -135,8 +135,9 @@ def quiz_alt():
     if 0:
         "Переход на страницу с результатом"
     else: #подать в формму нужный вопрос
-        form = ResponsibilityWaste()
+        form = ResponsibilityWaste_alt(forForm)
         if form.validate_on_submit():
+            #сохранить ответ пользователя 
             flash(form.first.data)     
             return redirect(url_for('quiz'))
         return render_template('quiz.html', form = form, text='test', title = 'Ecoquiz')
