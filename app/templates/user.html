@@ -2,12 +2,12 @@
 
 {% block content  %}
 
-    <div align="center" class="maintext">Hello {{user.username}}</div>
+    <div align="center" class="navtext">Hello {{user.username}}</div>
     {% if current_user.ecological == None %}
-    <div align="center" class="maintext">You have no current environmental friendliness</div>
+    <div align="center" class="navtext">You have no current environmental friendliness</div>
     {% else %}
     {% if current_user.ecological > 50 %}
-    <div align="center" class="maintext">You current environmental friendliness:</div>    
+    <div align="center" class="navtext">You current environmental friendliness:</div>    
         <div class="parent"><div align="center">
                 <div class="clearfix">
                     <div class="c100 p{{current_user.ecological}} big green">
@@ -21,7 +21,7 @@
             </div>
         </div>
     {% else %}
-        <div align="center" class="maintext">You current environmental friendliness:</div>    
+        <div align="center" class="navtext">You current environmental friendliness:</div>    
         <div class="parent"><div align="center">
                 <div class="clearfix">
                     <div class="c100 p{{current_user.ecological}} big dark">
