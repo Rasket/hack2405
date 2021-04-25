@@ -47,10 +47,13 @@ def company(companyname):
 
 @app.route('/explore', methods=['GET', 'POST'])
 def explore():
+    return render_template('placeholder.html')
+    '''
     form = ResponsibilityWaste()
     if form.validate_on_submit():
         print(form.example.data)
     return render_template('ecotestone.html', form = form)
+    '''
 # здесь планируется размещать информацию о всех компаниях которые хотят рассказать о своей эко оценке + поиск по компаниям
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -73,8 +76,6 @@ def register():
 @login_required
 def edit_profile():
     form = EditProfileForm(current_user.username)
-    '''
-    form = EditProfileForm(current_user.username)
     if form.validate_on_submit():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data      
@@ -86,7 +87,6 @@ def edit_profile():
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
-        '''
     return render_template('edit.html', title = 'Edit Profile', form = form)    
 
 
