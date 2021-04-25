@@ -142,3 +142,13 @@ def quiz_alt():
             return redirect(url_for('quiz'))
         return render_template('quiz.html', form = form, text='test', title = 'Ecoquiz')
 # возможность узнать свою экооценку
+
+
+userTest = test1()
+userLog = None
+forForm = userTest.start()
+if userLog == None:
+    pass
+else:
+    for ans in userLog:
+        forForm = userTest.next(ans)
