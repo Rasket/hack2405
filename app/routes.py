@@ -47,7 +47,7 @@ def company(companyname):
 
 @app.route('/explore', methods=['GET', 'POST'])
 def explore():
-    return render_template('placeholder.html')
+    return render_template('explore.html')
     '''
     form = ResponsibilityWaste()
     if form.validate_on_submit():
@@ -91,10 +91,11 @@ def edit_profile():
 
 
 @app.route('/ecoquiz', methods=['GET', 'POST'])
+@login_required
 def quiz():
     form = ResponsibilityWaste()
     if form.validate_on_submit():
         flash(form.first.data)     
         return redirect(url_for('quiz'))
-    return render_template('quiz.html', form = form, text='test')
+    return render_template('quiz.html', form = form, text='test', title = 'Ecoquiz')
 # возможность узнать свою экооценку

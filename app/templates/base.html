@@ -84,9 +84,9 @@ a:active {
         <link rel="stylesheet" href="/static/circle.css">
     <head>
         {% if title %}
-        <title>{{ title }} - microblog</title>
+        <title>{{ title }} - ecoprofile</title>
         {% else %}
-        <title>microblog</title>
+        <title>ECO-profile</title>
         {% endif %}
     </head>
     <body>
@@ -95,7 +95,7 @@ a:active {
             
             {% if current_user.is_anonymous %}
             <a class="navtext" href="{{ url_for('explore') }}">Explore</a>
-            <a  class="navtext" href="{{ url_for('login') }}">Login</a>
+            <a  class="navtext" href="{{ url_for('login') }}">Login</a>    
             {% else %}
             <span class="navtext">{{current_user.username}}</span>
             <a class="navtext" href="{{ url_for('explore') }}">Explore</a>

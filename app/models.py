@@ -19,6 +19,7 @@ class User(UserMixin, db.Model):
 	avatar = db.Column(db.LargeBinary)
 	about_me = db.Column(db.String(500))
 	ecological = db.Column(db.Integer)
+	public = db.Column(db.Boolean, default=True)
 	def set_password(self, password):
 		self.password_hash = generate_password_hash(password)
 	def check_password(self, password):

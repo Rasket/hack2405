@@ -4,6 +4,7 @@
 <title>Насколько вы экологичны?</title>
 
 <form action="" method="post"  novalidate>
+	<b><span class="navtext">{{ form.first.label}}</span><b>
 	{{ form.hidden_tag() }}
 	
 	<table align="center" cellspacing="0">
@@ -16,7 +17,490 @@
 	    </tr>
     </div>
 	{% endfor %}
+	</table>
+	<p>
+        <span class="navtext">{{ form.second.label }}</span><br>
+        {{ form.second(size=25) }}<br>
+    </p>
+	<p>
+<span class="navtext">{{ form.third.label }}</span><br>
+        {{ form.third(size=25) }}<br>
+    </p>
+	<p>
+<span class="navtext">{{ form.fourth.label }}</span><br>
+        {{ form.fourth(size=25) }}<br>
+    </p>
+    <p>
+<span class="navtext">{{ form.fifth.label }}</span><br>
+        {{ form.fifth(size=25) }}<br>
+    </p>
+    <p>
+<span class="navtext">{{ form.sixth.label }}</span><br>
+        {{ form.sixth(size=25) }}<br>
+    </p>
+    <p>
+<span class="navtext">{{ form.seventh.label }}</span><br>
+        {{ form.seventh(size=25) }}<br>
+    </p>
+    <p>
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.eighth.label}}</span><b>		
+	{% for subfield in form.eighth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 0px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.ninth.label}}</span><b>
+		
+	{% for subfield in form.ninth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 0px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+<span class="navtext">{{ form.tenth.label }}</span><br>
+        {{ form.tenth(size=25) }}<br>
+    </p>
+    <p>
+<span class="navtext">{{ form.eleventh.label }}</span><br>
+        {{ form.eleventh(size=25) }}<br>
+    </p>
 	
+	</table>
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twelfth.label}}</span><b>
+		
+	{% for subfield in form.twelfth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 600px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.thirteenth.label}}</span><b>
+		
+	{% for subfield in form.thirteenth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 550px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+    <p>
+<span class="navtext">{{ form.fourteenth.label }}</span><br>
+        {{ form.fourteenth(size=25) }}<br>
+    </p>
+
+    <p>
+<span class="navtext">{{ form.fifteenth.label }}</span><br>
+        {{ form.fifteenth(size=25) }}<br>
+    </p>
+
+    <p>
+<span class="navtext">{{ form.sixteenth.label }}</span><br>
+        {{ form.sixteenth(size=25) }}<br>
+    </p>
+
+    <p>
+<span class="navtext">{{ form.seventeenth.label }}</span><br>
+        {{ form.seventeenth(size=25) }}<br>
+    </p>
+
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.eighteenth.label}}</span><b>
+		
+	{% for subfield in form.eighteenth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 175px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twentyth.label}}</span><b>
+		
+	{% for subfield in form.twentyth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 200px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twentyfirst.label}}</span><b>
+		
+	{% for subfield in form.twentyfirst %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 175px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twentysecond.label}}</span><b>
+		
+	{% for subfield in form.twentysecond %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 200px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twentythird.label}}</span><b>
+		
+	{% for subfield in form.twentythird %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 175px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twentyfourth.label}}</span><b>
+		
+	{% for subfield in form.twentyfourth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 200px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twentyfifth.label}}</span><b>
+		
+	{% for subfield in form.twentyfifth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 175px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twentysixth.label}}</span><b>
+		
+	{% for subfield in form.twentysixth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 200px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twentyseventh.label}}</span><b>
+		
+	{% for subfield in form.twentyseventh %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 175px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twentyeighth.label}}</span><b>
+		
+	{% for subfield in form.twentyeighth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 200px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twentyninth.label}}</span><b>
+		
+	{% for subfield in form.twentyninth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 175px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.thirtieth.label}}</span><b>
+		
+	{% for subfield in form.thirtieth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 5px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.thirtyfirst.label}}</span><b>
+		
+	{% for subfield in form.thirtyfirst %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 175px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.thirtysecond.label}}</span><b>
+		
+	{% for subfield in form.thirtysecond %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 5px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.thirtythird.label}}</span><b>
+		
+	{% for subfield in form.thirtythird %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 175px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.thirtyfourth.label}}</span><b>
+		
+	{% for subfield in form.thirtyfourth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 175px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.thirtyfifth.label}}</span><b>
+		
+	{% for subfield in form.thirtyfifth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 175px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.thirtysixth.label}}</span><b>
+		
+	{% for subfield in form.thirtysixth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 175px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.thirtyseventh.label}}</span><b>
+		
+	{% for subfield in form.thirtyseventh %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 175px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.thirtyeughth.label}}</span><b>
+		
+	{% for subfield in form.thirtyeughth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 5px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+1111
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.thirtyninth.label}}</span><b>
+		
+	{% for subfield in form.thirtyninth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 5px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.fortieth.label}}</span><b>
+		
+	{% for subfield in form.fortieth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 5px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.fourtyfirst.label}}</span><b>
+		
+	{% for subfield in form.fourtyfirst %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 5px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.fourtysecond.label}}</span><b>
+		
+	{% for subfield in form.fourtysecond %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 200px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.fourtythird.label}}</span><b>
+		
+	{% for subfield in form.fourtythird %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 5px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.fourtyfourth.label}}</span><b>
+		
+	{% for subfield in form.fourtyfourth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 5px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.fourtyfifteenth.label}}</span><b>
+		
+	{% for subfield in form.fourtyfifteenth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 5px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.fourtysixteenth.label}}</span><b>
+		
+	{% for subfield in form.fourtysixteenth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 5px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.fourtyeighteenth.label}}</span><b>
+		
+	{% for subfield in form.fourtyeighteenth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 5px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
 	</table>
 	<p>{{ form.submit() }}</p>
 	
