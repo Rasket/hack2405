@@ -1,0 +1,49 @@
+
+	{% extends "base.html" %}
+ 
+{% block content  %}
+	<form action="" method="post" enctype="multipart/form-data">
+	{{form.hidden_tag()}}
+<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.eighteenth.label}}</span><b>
+		
+	{% for subfield in form.eighteenth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 240px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twentyth.label}}</span><b>
+		
+	{% for subfield in form.twentyth %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 240px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	<table align="center" cellspacing="0">
+	<b><span class="navtext">{{ form.twentyfirst.label}}</span><b>
+		
+	{% for subfield in form.twentyfirst %}
+	<div class="inputGroup">
+	    <tr>
+			<td style="padding-left: 240px;" >{{ subfield }}</td>
+	        <td ><span class="navtext">{{ subfield.label }}</span></td>
+	    </tr>
+    </div>
+	{% endfor %}
+	</table>
+
+	
+	<p>{{ form.submit() }}</p>
+	</form>
+{% endblock %}
